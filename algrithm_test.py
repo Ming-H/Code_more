@@ -75,6 +75,7 @@ class Anagram:
         return stillOK
     print(Solution1('abcd','dcba'))
 
+    #对两个字符串进行排序，如果是变位词，则排序后的结果应该相同，时间复杂度为O(lgN)
     def Solution2(s1,s2):
         alist1 = list(s1)
         alist2 = list(s2)
@@ -90,6 +91,7 @@ class Anagram:
         return matches
     print(Solution2('abcde','edcbg'))
 
+    #将字符转化为数字，然后遍历每一个字符串，得到对应的数组，判断两个数组是否相等，时间复杂度为O(N)
     def Solution3(s1,s2):
         c1 = [0]*26
         c2 = [0]*26
