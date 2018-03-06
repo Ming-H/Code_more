@@ -1,3 +1,3 @@
 # Code about python
-python 面试题
+python 笔试题
 http://www.codingonway.com/
