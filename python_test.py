@@ -68,7 +68,6 @@ def recursion_merge_sort2(l1, l2):
 
 4、交叉链表求交点
 #******如果两个链表交叉，则从交叉点开始，后面的元素均相同******
-
 a = [1,2,3,7,8,9,1,5]
 b = [4,5,7,9,1,5]
 
@@ -83,7 +82,14 @@ for i in range(1,min(len(a),len(b))):
         else:
             pass
         
-        
+5、字典排序
+d = {'a':5, 'b':4, 'e':83, 'z':42, 'h':33}
+#根据key排序
+d_sort_key = sorted(d.items(), key=lambda k: k[0])  
+[(k,d[k]) for k in sorted(d.keys())] 
+#根据value排序
+d_sort_value = sorted(d.items(), key = lambda k: k[1])   
+
 参考文献：
 https://github.com/taizilongxu/interview_python#29-super-init
 http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html
