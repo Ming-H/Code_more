@@ -181,7 +181,12 @@ d1 = {v:k for k,v in d.items()}
 zip() + dict()
 (3) d3 = dict(zip(d.values(), d.keys()))
 
-
+15、求斐波那契数列的第n项
+def Fibonacci(n):
+    prev, curr = 0, 1
+    for _ in range(n):
+        prev, curr = curr, prev+curr
+    return prev
 
 
 参考文献：
@@ -189,3 +194,4 @@ https://github.com/taizilongxu/interview_python#29-super-init
 http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html
 https://www.cnblogs.com/shizhengwen/p/6972183.html
 http://blog.csdn.net/u013679490/article/details/54948759
+http://www.codingonway.com/python-get-fibonacci-n-number.html
