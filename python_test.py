@@ -172,6 +172,14 @@ funcLog()
 >>funcLog was called
 >>after func was called
 
+14、交换字典的键和值
+d = {'A' : 1, 'B' : 2, 'C' : 3}
+(1) 字典推导式
+d1 = {v:k for k,v in d.items()}
+生成器表达式 + dict()
+(2) d2 = dict((v,k) for k,v in d.items())
+zip() + dict()
+(3) d3 = dict(zip(d.values(), d.keys()))
 
 
 
