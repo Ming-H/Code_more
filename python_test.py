@@ -84,7 +84,10 @@ d = {'a':5, 'b':4, 'e':83, 'z':42, 'h':33}
 d_sort_key = sorted(d.items(), key=lambda k: k[0])  
 [(k,d[k]) for k in sorted(d.keys())] 
 #根据value排序
-d_sort_value = sorted(d.items(), key = lambda k: k[1])   
+d_sort_value = sorted(d.items(), key = lambda k: k[1]) 
+#通过公共键对字典列表进行排序
+l = [{'x':1, 'y':2}, {'x':2, 'y':3}, {'x':3, 'y':4}]
+L_new = sorted(l, key=lambda k: k['x'], reverse = True)
 
 6、替换字符串指定字符
 #subn()方法执行的效果跟sub()一样，不过它会返回一个二维数组，包括替换后的新的字符串和总共替换的数量
