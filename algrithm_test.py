@@ -111,11 +111,111 @@ class Anagram:
         return stillOK
     print(Solution3('apple','pleap'))
 
+    
+4、最大多位数
+设有n个正整数，将他们连接成一排，组成一个最大的多位整数。
+如:n=3时，3个整数13,312,343,连成的最大整数为34331213。
+如:n=4时,4个整数7,13,4,246连接成的最大整数为7424613。
+输入描述:
+有多组测试样例，每组测试样例包含两行，第一行为一个整数N（N<=100），第二行包含N个数(每个数不超过1000，空格分开)。
+输出描述:
+每组数据输出一个表示最大的整数。
+(1)
+n = raw_input()
+x = raw_input().split(' ')
+x.sort(cmp=lambda x,y:cmp(x+y, y+x), reverse=True)
+print "".join(x)
+(2)
+def func():
+    n = int(input())
+    num_list = input().split()
+    if len(num_list) != n:
+        return False
+    else:
+        sorted_list = []
+        while num_list:
+            cur_num = num_list[0]
+            for item in num_list:
+                if cur_num + item < item + cur_num:
+                    cur_num = item
+            sorted_list.append(cur_num)
+            num_list.remove(cur_num)
+        return sorted_list
+    
+if __name__ == "__main__":
+    func()
+
+5、句子反转
+给定一个句子（只包含字母和空格）， 将句子中的单词位置反转，单词用空格分割, 单词之间只有一个空格，前后没有空格。 
+比如： （1） “hello xiao mi”-> “mi xiao hello”
+输入描述:
+输入数据有多组，每组占一行，包含一个句子(句子长度小于1000个字符)
+输出描述:
+对于每个测试示例，要求输出句子中单词反转后形成的句子
+
+def func():
+    L = input().split()
+    print(L)
+    print(" ".join(L[::-1]))
+    
+if __name__ == "__main__":
+    func()
+
+6、电话号码分身
+继MIUI8推出手机分身功能之后，MIUI9计划推出一个电话号码分身的功能：首先将电话号码中的每个数字加上8取个位，然后使用对应的大写字母代替 （"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"）， 然后随机打乱这些字母，所生成的字符串即为电话号码对应的分身。
+输入描述:
+第一行是一个整数T（1 ≤ T ≤ 100)表示测试样例数；接下来T行，每行给定一个分身后的电话号码的分身（长度在3到10000之间）。
+输出描述:
+输出T行，分别对应输入中每行字符串对应的分身前的最小电话号码（允许前导0）。
+示例1
+输入
+4
+EIGHT
+ZEROTWOONE
+OHWETENRTEO
+OHEWTIEGTHENRTEO
+输出
+0
+234
+345
+0345
+
+import sys
+def originalDigits(s):
+    result = [0]*10
+    result[0] = s.count("Z")
+    result[2] = s.count("W")
+    result[4] = s.count("U")
+    result[6] = s.count("X")
+    result[7] = s.count("S") - result[6]
+    result[5] = s.count("V") - result[7]
+    result[1] = s.count("O") - result[0] - result[4] - result[2]
+    result[9] = (s.count("N") - result[1] - result[7]) // 2
+    result[8] = s.count("I") - result[5] - result[6] - result[9]
+    result[3] = s.count("H") - result[8]
+
+    t, resStr = "", ""
+    for i, r in enumerate(result):
+        t += r * str(i)
+    
+    for i in t:
+        if int(i) >= 8:
+            resStr += str(int(i) - 8)
+        else:
+            resStr += str(int(i) + 10 - 8)
+    return "".join(sorted(resStr))  
+    
+if __name__ == "__main__":
+    ss = "OHEWTIEGTHENRTEO"
+    print(originalDigits(ss.strip()))
+
+
 
 
 参考文献：
 https://github.com/taizilongxu/interview_python#29-super-init
 http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html
+https://www.nowcoder.com/questionTerminal/493d71a992f44554a500ed818056e1a6
 
 
 
