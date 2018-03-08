@@ -271,7 +271,6 @@ def func():
 2 0 1 1 1
 输出
 4
-
 def func():
     N = int(input())
     L = list(map(int, input().split()))
