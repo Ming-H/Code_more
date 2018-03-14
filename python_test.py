@@ -188,11 +188,18 @@ def Fibonacci(n):
         prev, curr = curr, prev+curr
     return prev
 
-16、python单下划线、双下划线、头尾双下划线说明：
+16、python面向对象
+python单下划线、双下划线、头尾双下划线说明：
 __foo__: 定义的是特殊方法，一般是系统定义名字 ，类似 __init__() 之类的。
 _foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *
 __foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。
 
+Python内置类属性
+__dict__ : 类的属性（包含一个字典，由类的数据属性组成）
+__doc__ :类的文档字符串
+__name__: 类名
+__module__: 类定义所在的模块（类的全名是'__main__.className'，如果类位于一个导入模块mymod中，那么className.__module__ 等于 mymod）
+__bases__ : 类的所有父类构成元素（包含了一个由所有父类组成的元组）
     
     
     
