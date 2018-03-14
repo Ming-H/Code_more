@@ -188,10 +188,18 @@ def Fibonacci(n):
         prev, curr = curr, prev+curr
     return prev
 
+16、python单下划线、双下划线、头尾双下划线说明：
+__foo__: 定义的是特殊方法，一般是系统定义名字 ，类似 __init__() 之类的。
+_foo: 以单下划线开头的表示的是 protected 类型的变量，即保护类型只能允许其本身与子类进行访问，不能用于 from module import *
+__foo: 双下划线的表示的是私有类型(private)的变量, 只能是允许这个类本身进行访问了。
 
+    
+    
+    
 参考文献：
 https://github.com/taizilongxu/interview_python#29-super-init
 http://www.cnblogs.com/ChenxofHit/archive/2011/03/18/1988431.html
 https://www.cnblogs.com/shizhengwen/p/6972183.html
 http://blog.csdn.net/u013679490/article/details/54948759
 http://www.codingonway.com/python-get-fibonacci-n-number.html
+http://www.runoob.com/python/python-object.html
