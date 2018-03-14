@@ -1,12 +1,10 @@
 # -*- coding: utf-8 -*-
-# Created on Wed Mar 14 09:42:08 2018
-# @author: HM
-
 """
-查找（Searching）就是根据给定的某个值，在查找表中确定一个其关键字等于给定值的数据元素（或记录）。
-"""
+Created on Wed Mar 14 09:42:08 2018
 
-# 无序查找，数据不排序的线性查找，遍历数据元素， 时间复杂度O(n)
+@author: HM
+"""
+#无序查找， 时间复杂度O(n)
 def sequential_search(L, target):
     for i in range(len(L)):
         if L[i] == target:
@@ -14,7 +12,7 @@ def sequential_search(L, target):
     else:
          return False
      
-# 二分查找，查找表中的数据必须按某个主键进行某种排序，时间复杂度为O(log(n))
+#二分查找，时间复杂度为O(log(n))
 def binary_search(L, target):
     i = 0
     j = len(L) - 1
@@ -28,4 +26,28 @@ def binary_search(L, target):
         else:
             return mid
     return False
+
+# 插值排序 以更快的速度进行缩减 时间复杂度O(log(n))
+# 插值的核心就是使用公式： value = (target - list[low])/(list[high] - list[low])
+# 其优点是，对于表内数据量较大，且关键字分布比较均匀的查找表，使用插值算法的平均性能比二分查找要好得多。
+# 反之，对于分布极端不均匀的数据，则不适合使用插值算法。
+def insert_sort(L, target):
+    i = 0
+    j = len(L) - 1
+    while(i<=j):
+        mid = i + int((j-i)*(target-L[i])/(L[j]-L[i]))
+        guess = L[mid]
+        if target < guess:
+            j = mid - 1
+        elif target > guess:
+            i = mid + 1
+        else:
+            return mid
+    return False
         
+
+if __name__ == "__main__":
+    L = [1, 5, 7, 8, 22, 54, 99, 123, 200, 222, 444]
+    item = 22
+    result = insert_sort(L, item)
+    print(result)
