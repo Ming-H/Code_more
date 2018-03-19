@@ -53,7 +53,7 @@ def quick_sort(myList, start, end):
             while (i < j) and (myList[i] <= base):
                 i = i + 1
             myList[j] = myList[i]
-        myList[i] = base
+        myList[i] = base    #important, not (base = myList[j])
         quick_sort(myList, start, i - 1)
         quick_sort(myList, j + 1, end)
     return myList
