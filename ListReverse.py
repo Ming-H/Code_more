@@ -65,3 +65,6 @@ p=recurse(head,newhead);           #输出链表4->3->2->1->None
 while p:
 	print p.val;
 	p=p.next;
+
+
+参考文献：http://blog.csdn.net/u011608357/article/details/36933337
