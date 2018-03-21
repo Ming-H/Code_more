@@ -137,6 +137,8 @@ while x != 1.0
 >>SyntaxError: invalid syntax
 
 12、copy.copy和copy.deepcopy的区别 
+#1. copy.copy 浅拷贝 只拷贝父对象，不会拷贝对象的内部的子对象。 
+#2. copy.deepcopy 深拷贝 拷贝对象及其子对象 
 import copy
 lista = [1,2,3,['a','b']]
 listb = copy.copy(lista)
