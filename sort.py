@@ -62,7 +62,39 @@ nums = [9999,5,2,45,6,8,2,1]
 print(quick_sort(nums, 0, len(nums)-1))
       
           
-              
-           
+#归并排序
+"""
+首先归并排序使用了二分法，归根到底的思想还是分而治之。拿到一个长数组，将其不停的分为左边和右边两份，
+然后以此递归分下去。然后再将她们按照两个有序数组的样子合并起来。
+"""                 
+def merge(a, b):
+    c = []
+    h = j = 0
+    while j < len(a) and h < len(b):
+        if a[j] < b[h]:
+            c.append(a[j])
+            j += 1
+        else:
+            c.append(b[h])
+            h += 1
+    if j == len(a):
+        for i in b[h:]:
+            c.append(i)
+    else:
+        for i in a[j:]:
+            c.append(i)
+    return c
+
+def merge_sort(lists):
+    if len(lists) <= 1:
+        return lists
+    middle = len(lists)/2
+    left = merge_sort(lists[:middle])
+    right = merge_sort(lists[middle:])
+    return merge(left, right)
+
+if __name__ == '__main__':
+    a = [4, 7, 8, 3, 5, 9]
+    print merge_sort(a)
        
-            
+ 参考文献：https://www.cnblogs.com/piperck/p/6030122.html           
