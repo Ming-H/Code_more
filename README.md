@@ -6,5 +6,5 @@ Code about python
 
 3、其他编程练习
 
-python 笔试题
-http://www.codingonway.com/
+
+
