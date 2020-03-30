@@ -59,5 +59,30 @@ class LList:
 
 
 
+def quick(head):
+    return quickSort(head, NULL)
+
+def quickSort(head, end):
+    if head!=end:
+        partition = get_partition(head, end)
+        quickSort(head, partition)
+        quickSort(partition.next, end)
+        
+def partition(head, end):
+    pivot = head.val
+    p = head
+    q = p.next
+    while q!=end:
+        if q.val<pivot:
+            p = p.next
+            swap(p.val, q.val)
+        q = q.next
+    swap(p.val, head.val)
+    return p
+
+def swap(p, q):
+    val = p.val
+    p.val = q.val
+    q.val = val
 
     
